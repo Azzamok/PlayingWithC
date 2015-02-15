@@ -20,11 +20,13 @@ int main()
 
 	printf("Can a constant be changed? %s \n", MYCONSTANT); //Uses the predefined constant string
 
+	/*
+	//For the sake of running the other stuff....
+
 	char user[20];
 	char pass[20];
 	int age;
 
-	/*
 	printf("Enter your username...\n"); //Print statement for a prompt
 	scanf("%s", user); //Whatever the user types, it is stored in 'user' as a string
 
@@ -43,6 +45,15 @@ int main()
 	float avgcost = ((float)dogs+(float)cats+(float)rabbits)/3; //Typecasting, put data type in front to temp change it.
 
 	printf("The average cost of these animals is %.2f dollars. \n", avgcost);
+
+	int seven = 7;
+	if(seven > 3) //If-else statement (If there are only 1 other outcome, you don't need {}
+	{
+		printf("Hooray, 7 is greater than 3");
+	}
+	else printf("Oh noes!  ANARCHY");
+
+
 
 	return 0;
 }
