@@ -1,14 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #define MYCONSTANT "This cannot ever be changed!"
 
 //Prints "Hello World", and other stuff...
+
+long factorial(int num)
+{
+	if(num < 0)
+	{
+		printf("Invalid number \n");
+		return 0;
+	}
+	if(num == 1 || num == 0)
+	{
+		return 1;
+	}
+	else return num*factorial(num-1);
+}
 
 int main()
 {
 	setbuf(stdout, NULL); //Disabled the buffer
 
+	//##############################################################################
 	int blah = 20; //Defining variables
 	printf("Hello world \n");
 	printf("%d \n", blah);
@@ -20,6 +36,7 @@ int main()
 
 	printf("Can a constant be changed? %s \n", MYCONSTANT); //Uses the predefined constant string
 
+	//##############################################################################
 	/*
 	//For the sake of running the other stuff....
 
@@ -39,6 +56,7 @@ int main()
 	printf("Hi %s, you are %d years old and your password, %s, is now all over the Internet! :) \n", user, age, pass);
 	*/
 
+	//##############################################################################
 	int dogs = 40;
 	int cats = 42;
 	int rabbits = 99;
@@ -46,14 +64,30 @@ int main()
 
 	printf("The average cost of these animals is %.2f dollars. \n", avgcost);
 
+	//##############################################################################
 	int seven = 7;
 	if(seven > 3) //If-else statement (If there are only 1 other outcome, you don't need {}
 	{
-		printf("Hooray, 7 is greater than 3");
+		printf("Hooray, 7 is greater than 3 \n");
 	}
-	else printf("Oh noes!  ANARCHY");
+	else printf("Oh no!  ANARCHY \n");
 
+	//##############################################################################
+	int fact_num;
+	printf("Enter a number...\n");
+	scanf("%d", &fact_num);
+
+	long fact = factorial(fact_num);
+	if(fact != 0)
+	{
+	printf("%d factorial is %lu \n", fact_num, fact); //%lu for unsigned long
+	}
+
+	//##############################################################################
 
 
 	return 0;
 }
+
+
+
