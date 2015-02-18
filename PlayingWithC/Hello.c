@@ -108,6 +108,19 @@ int main()
 	(legalage >= 18) ? printf("Welcome to the Salty Spitoon, how tough are ya? \n") : printf("Get out scrub. \n");
 	//Shorthand if-else statement (test code) ? true case : false case;
 
+	//##############################################################################
+	int a = 10, b = 3, ans = 0;
+	ans = ++a * b;
+	printf("Incrementing to the left of the variable has priority, ans is %d \n", ans);
+
+	a = 10, b = 3;
+	ans = a++ * b;
+	printf("To the right, and it increments after ans is assigned a new value, ans is %d...a = %d \n", ans, a);
+
+	//##############################################################################
+
+
+
 	return 0;
 }
 
