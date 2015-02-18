@@ -20,6 +20,19 @@ long factorial(int num)
 	else return num*factorial(num-1);
 }
 
+long fib(int num)
+{
+	if(num<1)
+	{
+		printf("Invalid input, please try again.");
+	}
+	if(num == 1 || num == 2)
+			{
+		return 1;
+			}
+	else return fib(num-1) + fib(num-2);
+}
+
 int main()
 {
 	setbuf(stdout, NULL); //Disabled the buffer
@@ -84,7 +97,16 @@ int main()
 	}
 
 	//##############################################################################
+	int fibnum = fib(7);
+	printf("The 7th number in the Fibonacci sequence is %d \n", fibnum);
 
+	//##############################################################################
+	int legalage;
+	printf("Enter your age. \n");
+	scanf("%d", &legalage);
+
+	(legalage >= 18) ? printf("Welcome to the Salty Spitoon, how tough are ya? \n") : printf("Get out scrub. \n");
+	//Shorthand if-else statement (test code) ? true case : false case;
 
 	return 0;
 }
