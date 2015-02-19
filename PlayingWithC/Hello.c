@@ -51,22 +51,22 @@ int main()
 
 	//##############################################################################
 	/*
-	//For the sake of running the other stuff....
-
-	char user[20];
-	char pass[20];
-	int age;
-
-	printf("Enter your username...\n"); //Print statement for a prompt
-	scanf("%s", user); //Whatever the user types, it is stored in 'user' as a string
-
-	printf("Enter your password...\n");
-	scanf("%s", pass);
-
-	printf("Enter your age...\n");
-	scanf("%d", &age); //Remember to add a '&' to any variable that doesn't have pointers (array)
-
-	printf("Hi %s, you are %d years old and your password, %s, is now all over the Internet! :) \n", user, age, pass);
+	*For the sake of running the other stuff....
+	*
+	*	char user[20];
+	*	char pass[20];
+	*	int age;
+	*
+	*	printf("Enter your username...\n"); //Print statement for a prompt
+	*	scanf("%s", user); //Whatever the user types, it is stored in 'user' as a string
+	*
+	*	printf("Enter your password...\n");
+	*	scanf("%s", pass);
+	*
+	*	printf("Enter your age...\n");
+	*	scanf("%d", &age); //Remember to add a '&' to any variable that doesn't have pointers (array)
+	*
+	*	printf("Hi %s, you are %d years old and your password, %s, is now all over the Internet! :) \n", user, age, pass);
 	*/
 
 	//##############################################################################
@@ -118,8 +118,30 @@ int main()
 	printf("To the right, and it increments after ans is assigned a new value, ans is %d...a = %d \n", ans, a);
 
 	//##############################################################################
+	int somenum;
+	printf("Pick a number between 1 and 5 \n");
+	scanf("%d", &somenum);
 
+	switch(somenum)
+	//Used for multiple if else '==' statements, in this case somenum == 1,2,3,4,5, else default
+	{
+	case 1 : printf("You're a baby \n");
+	break;
 
+	case 2 : printf("Runner-up \n");
+	break;
+
+	case 3 : printf("The middle-man \n");
+	break;
+
+	case 4 : printf("Die die die");
+	break;
+
+	case 5 : printf("Bigger is better");
+	break;
+
+	default : printf("Dafuq? Learn to read.");
+	}
 
 	return 0;
 }
