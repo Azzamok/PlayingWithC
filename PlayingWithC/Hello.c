@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
+
 #define MYCONSTANT "This cannot ever be changed!"
 
 //Prints "Hello World", and other stuff...
@@ -165,7 +166,15 @@ int main()
 	printf("Hello there, %s! \n", fullname);
 
 	//##############################################################################
+	/*
+	 * This method is better than char name[] = "foo"; since you can treat it
+	 * like a variable, and simply rename it without the need of a str method
+	 */
+	char * fish = "Salmon";
+	printf("%s \n", fish);
 
+	fish = "Tuna";
+	printf("%s \n", fish);
 
 	return 0;
 }
