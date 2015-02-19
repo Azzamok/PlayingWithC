@@ -36,7 +36,9 @@ long fib(int num)
 }
 
 int clear_input_buffer(void) {
-	//Not my code
+   /*Not my code
+    * Use clear_input_buffer() either after every scanf() or before every gets()
+    */
     int ch;
     while (((ch = getchar()) != EOF) && (ch != '\n')) /* void */;
     return ch;
@@ -95,6 +97,7 @@ int main()
 	else printf("Oh no!  ANARCHY \n");
 
 	//##############################################################################
+	/*
 	int fact_num;
 	printf("Enter a number...\n");
 	scanf("%d", &fact_num);
@@ -104,18 +107,21 @@ int main()
 	{
 	printf("%d factorial is %lu \n", fact_num, fact); //%lu for unsigned long
 	}
+	*/
 
 	//##############################################################################
 	int fibnum = fib(7);
 	printf("The 7th number in the Fibonacci sequence is %d \n", fibnum);
 
 	//##############################################################################
+	/*
 	int legalage;
 	printf("Enter your age. \n");
 	scanf("%d", &legalage);
 
 	(legalage >= 18) ? printf("Welcome to the Salty Spitoon, how tough are ya? \n") : printf("Get out scrub. \n");
 	//Shorthand if-else statement (test code) ? true case : false case;
+	 */
 
 	//##############################################################################
 	int a = 10, b = 3, ans = 0;
@@ -127,14 +133,15 @@ int main()
 	printf("To the right, and it increments after ans is assigned a new value, ans is %d...a = %d \n", ans, a);
 
 	//##############################################################################
+	/*
 	int somenum;
 	printf("Pick a number between 1 and 5 \n");
 	scanf("%d", &somenum);
 
 	switch(somenum)
-	/*Used for multiple if else '==' statements,
+	/ *Used for multiple if else '==' statements,
 	 *in this case somenum == 1,2,3,4,5,else default
-	 */
+	 * /
 	{
 	case 1 : printf("You're a baby \n");
 	break;
@@ -153,15 +160,16 @@ int main()
 
 	default : printf("Dafuq? Learn to read. \n");
 	}
+	*/
 
 	//##############################################################################
 	char fullname[50];
 	/* scanf() leaves the 'enter' key in the input buffer, if left there, gets() takes
 	 * it as the user input, resulting as if the program continues running.
-	 * Use clear_input_buffer() either after every scanf() or before every gets()
+	 *
 	 */
-	clear_input_buffer();
-	puts("Enter your full name");
+	//clear_input_buffer();
+	puts("Enter your full name: ");
 	gets(fullname); //Beware of gets(), it is considered unsafe!
 	printf("Hello there, %s! \n", fullname);
 
@@ -175,6 +183,18 @@ int main()
 
 	fish = "Tuna";
 	printf("%s \n", fish);
+
+	//##############################################################################
+	char gametitle[20];
+	char * pGametitle = gametitle;
+
+	printf("Enter a game title \n");
+	fgets(pGametitle, 20, stdin); //fgets(where to store, # of input chars, method of getting it)
+	puts(pGametitle);
+	printf("Any character after the 20th gets chopped off \n");
+
+	//##############################################################################
+
 
 	return 0;
 }
