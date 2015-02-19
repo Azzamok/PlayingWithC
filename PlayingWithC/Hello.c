@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #define MYCONSTANT "This cannot ever be changed!"
 
@@ -33,6 +34,13 @@ long fib(int num)
 	else return fib(num-1) + fib(num-2);
 }
 
+int clear_input_buffer(void) {
+	//Not my code
+    int ch;
+    while (((ch = getchar()) != EOF) && (ch != '\n')) /* void */;
+    return ch;
+}
+
 int main()
 {
 	setbuf(stdout, NULL); //Disabled the buffer
@@ -51,22 +59,22 @@ int main()
 
 	//##############################################################################
 	/*
-	*For the sake of running the other stuff....
-	*
-	*	char user[20];
-	*	char pass[20];
-	*	int age;
-	*
-	*	printf("Enter your username...\n"); //Print statement for a prompt
-	*	scanf("%s", user); //Whatever the user types, it is stored in 'user' as a string
-	*
-	*	printf("Enter your password...\n");
-	*	scanf("%s", pass);
-	*
-	*	printf("Enter your age...\n");
-	*	scanf("%d", &age); //Remember to add a '&' to any variable that doesn't have pointers (array)
-	*
-	*	printf("Hi %s, you are %d years old and your password, %s, is now all over the Internet! :) \n", user, age, pass);
+	//For the sake of running the other stuff....
+
+	char user[20];
+	char pass[20];
+	int age;
+
+	printf("Enter your username...\n"); //Print statement for a prompt
+	scanf("%s", user); //Whatever the user types, it is stored in 'user' as a string
+
+	printf("Enter your password...\n");
+	scanf("%s", pass);
+
+	printf("Enter your age...\n");
+	scanf("%d", &age); //Remember to add a '&' to any variable that doesn't have pointers (array)
+
+	printf("Hi %s, you are %d years old and your password, %s, is now all over the Internet! :) \n", user, age, pass);
 	*/
 
 	//##############################################################################
@@ -123,7 +131,9 @@ int main()
 	scanf("%d", &somenum);
 
 	switch(somenum)
-	//Used for multiple if else '==' statements, in this case somenum == 1,2,3,4,5, else default
+	/*Used for multiple if else '==' statements,
+	 *in this case somenum == 1,2,3,4,5,else default
+	 */
 	{
 	case 1 : printf("You're a baby \n");
 	break;
@@ -134,14 +144,28 @@ int main()
 	case 3 : printf("The middle-man \n");
 	break;
 
-	case 4 : printf("Die die die");
+	case 4 : printf("Die die die \n");
 	break;
 
-	case 5 : printf("Bigger is better");
+	case 5 : printf("Bigger is better \n");
 	break;
 
-	default : printf("Dafuq? Learn to read.");
+	default : printf("Dafuq? Learn to read. \n");
 	}
+
+	//##############################################################################
+	char fullname[50];
+	/* scanf() leaves the 'enter' key in the input buffer, if left there, gets() takes
+	 * it as the user input, resulting as if the program continues running.
+	 * Use clear_input_buffer() either after every scanf() or before every gets()
+	 */
+	clear_input_buffer();
+	puts("Enter your full name");
+	gets(fullname); //Beware of gets(), it is considered unsafe!
+	printf("Hello there, %s! \n", fullname);
+
+	//##############################################################################
+
 
 	return 0;
 }
