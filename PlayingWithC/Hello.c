@@ -194,6 +194,19 @@ int main()
 	printf("Any character after the 20th gets chopped off \n");
 
 	//##############################################################################
+	struct student {
+		char firstName[20];
+		char lastName[20];
+		int age;
+		char email[60];
+		char username[15];
+	};
+
+	struct student bob;
+	bob.age = 50;
+	strcpy(bob.firstName, "Bob");
+
+	//##############################################################################
 
 
 	return 0;
